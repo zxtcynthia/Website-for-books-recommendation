@@ -1,0 +1,75 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html>
+<title>Recommend</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+
+<body>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">  
+  <h2>What kind of book do you want to read?</h2>
+  <!-- First Photo Grid-->
+  <form action="#" method="post">
+  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+    {% for subfield in styles[:3] %}
+    <div class="w3-third">
+      <img src="{{ url_for('static', filename=pic1[loop.index0]) }}" alt="Picture" style="width:350px;height:250px">
+      <h4>{{ form.csrf_token }}{{ subfield }}<b>{{ subfield.label }}</b></h4>
+    </div>
+    {% endfor %}
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+        {% for subfield in styles[3:] %}
+    <div class="w3-third">
+      <img src="{{ url_for('static', filename=pic2[loop.index0]) }}" alt="Picture" style="width:350px;height:250px">
+      <h4>{{ form.csrf_token }}{{ subfield }}<b>{{ subfield.label }}</b></h4>
+    </div>
+    {% endfor %}
+    <input class="w3-button w3-dark-grey" type="submit" value="Next"/>
+  </div>
+  </form>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+  <h5>Find Us On</h5>
+  <div class="w3-xlarge w3-padding-16">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</footer>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+{% endblock %}

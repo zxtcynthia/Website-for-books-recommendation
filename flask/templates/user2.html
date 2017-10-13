@@ -1,0 +1,121 @@
+{% extends "header.html" %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html>
+<title>Wordcould</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Palatino Linotype";}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+    font-style: italic;
+    font-family: Palatino Linotype
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('http://media2.s-nbcnews.com/i/newscms/2016_39/1161536/read-stock-book-blanket-cozy-today-160927-tease_db4d2e526c8b6721a798728af4f900a7.jpg');
+    min-height: 500px;
+}
+/* Second image (Portfolio) */
+
+
+/* Third image (Contact) */
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+.onefifth {
+  width: 220px;
+  margin-top: 15px;
+  margin-right: 20px;
+  display: inline-block;
+}
+.facts{
+  text-align:center
+  font-size：20
+}
+
+</style>
+
+<body>
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">SEE WHAT PEOPLE READ AROUND YOU<span class="w3-hide-small"></span></span>
+  </div>
+  </div>
+
+<hr>
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class=" w3-padding-large">
+      <center><img src="{{chart_src}}" class="w3-round w3-image w3-opacity-min" alt="wordcloud" style="width:1000px; height:600px"></center>
+    </div>
+    
+  </div>
+
+  <hr>
+
+<!-- "{{ url_for('static',filename='charts/location_figure.png') }}" -->
+<!-- !PAGE CONTENT! -->
+
+<div class="w3-container" style="padding:20px 20px" id="team">
+ 
+</div>
+
+ <div class="w3-container" style="padding:20px 20px" id="team">
+  <p class="w3-center w3-large"><font size='5'>Now you can start your journey</font></p>
+   <center><a href="/search/" class="w3-button w-container w3-center w3-dark-grey" style="margin-bottom:20px" >Back to the search page</a></center>
+  </div>
+ 
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</footer>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
+{% endblock %}

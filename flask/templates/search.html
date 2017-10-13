@@ -1,0 +1,180 @@
+
+{% extends "header.html" %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html>
+<title>Search</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Palatino Linotype", Arial, Helvetica, sans-serif;
+font-style:italic;}
+.myLink {display: none}
+
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+</style>
+<body class="w3-light-grey">
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-hide-small" style="max-width:1500px">
+  <img class="w3-image" src="https://ae01.alicdn.com/kf/HTB18yb5JVXXXXbjXXXXq6xXFXXXh/Photo-Backdrops-Children-Vinyl-Photo-Props-for-Studio-Photography-font-b-Background-b-font-font-b.jpg" alt="background image" style="width:3000px;height:600px">
+  <div class="w3-display-middle" style="width:65%">
+    <div class="w3-bar w3-black">
+      <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Search');"><i class="fa fa-search w3-margin-right"></i>Search</button>
+      <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Filter');"><i class="fa fa-filter w3-margin-right"></i>Filter</button>
+      <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'About you');"><i class="fa fa-gratipay w3-margin-right"></i>About you</button>
+      <button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Recommendation');"><i class="fa fa-map-marker w3-margin-right"></i>Recommendation</button>
+    </div>
+
+    <!-- Tabs -->
+    <form action="" class="form-inline" method="post">
+      <div id="Search" class="w3-container w3-white w3-padding-16 myLink">
+        <h3>Find the book you want</h3>
+        <div class="w3-row-padding" style="margin:0 -16px;">
+          <div class="w3-half">
+            <!-- <form action="" class="form-inline" method="post"> -->
+              <input class="w3-input w3-border" type="text" placeholder="Book Title/Author/ISBN" name="keyword" value="{{request.form.keyword}}">
+              <p><input class='w3-button w3-dark-grey' type="submit" value="Search and find the book"></p>
+            <!-- </form> -->
+          </div>
+        </div>
+      </div>
+
+      <div id="Filter" class="w3-container w3-white w3-padding-16 myLink">
+        <h3>What kind do you want</h3>
+        <p>Input your preference and we will give you our recommendation</p>
+        <div class='w3-row'>
+          <div class="w3-third">
+            <!-- <select name='category' class="ui search dropdown" style="height:30px;" > -->
+              <!-- <option value="">Choose Category</option> -->
+              <!-- {% for t in c %} -->
+              <!-- <option value="{{request.form.category}}">{{ form.category }} -->
+              <!-- {{ form.hidden_tag() }}</option> -->
+              <!-- {% endfor %} -->
+            <!-- </select> -->
+            {{ form.category(style="height:30px;") }}
+            {{ form.hidden_tag() }}
+          </div>
+
+          <div class="w3-third">
+            {{ form.language(style="height:30px;") }}
+            {{ form.hidden_tag() }}
+          </div>
+
+          
+        </div>
+        <p><input class='w3-button w3-dark-grey' type="submit" value="Search"></p>
+      </div>
+
+      <div id="About you" class="w3-container w3-white w3-padding-16 myLink">
+        <h3>Take a look at your purchase history</h3>
+        <p>See what people read around you</p>
+        <div class="w3-row-padding" style="margin:0 -16px;">
+          <div class="w3-half">
+            <div class="ui input">
+              <input class="w3-input w3-border" style="height:30px;" type="text" placeholder="Enter your User_ID if you have" name="userID" value="{{request.form.userID}}">
+              <p><input class='w3-button w3-dark-grey' type="submit" value="Take a look"></p>
+            </div>
+          </div>
+        </div>
+        <a href=/user1/ class='w3-button w3-dark-grey'>No User ID?</a>
+      </div>
+      <div id="Recommendation" class="w3-container w3-white w3-padding-16 myLink">
+        <h3>Don't know what to read?</h3>
+        <p>We can help you.</p>
+        <div class="w3-row-padding" style="margin:0 -16px;">
+          <div class="w3-third">
+            
+            <p><a href="/recommendation/" class='w3-button w3-dark-grey' >Have a try!</a></p>
+          </div>
+            <!-- <a href="/recommendation/" class='w3-button w3-dark-grey' >Try!</a> -->
+        </div>
+      </div>
+    </form>
+  </div>
+</header>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-center w3-opacity w3-margin-bottom">
+  <h5>Find Us On</h5>
+  <div class="w3-xlarge w3-padding-16">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</footer>
+
+<script>
+// Tabs
+function openLink(evt, linkName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("myLink");
+  for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(linkName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+// Click on the first tablink on load
+document.getElementsByClassName("tablink")[0].click();
+</script>
+
+</body>
+</html>
+
+
+{% endblock %}

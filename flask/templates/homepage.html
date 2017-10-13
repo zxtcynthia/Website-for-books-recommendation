@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<title>Synergy</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Palatino Linotype";}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+    font-style: italic;
+    font-family: Palatino Linotype
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F13%2F6e9004b9-46f1-41c5-b3a6-e8bfcf4a806b.jpg');
+    min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+    background-image: url("https://www.konyvtar.elte.hu/sites/default/files/konyvek.jpg");
+    min-height: 500px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/c9/7e/f8/c97ef8b51e224cdb62b197edc4519a2f.jpg");
+    min-height: 500px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+.onefifth {
+  width: 220px;
+  margin-top: 15px;
+  margin-right: 20px;
+  display: inline-block;
+}
+.facts{
+  text-align:center
+  font-size：20
+}
+
+</style>
+
+<header>
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button"><i class="fa fa-home"></i> HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="/search/" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">PORTFOLIO</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="/search/" class="w3-bar-item w3-button">SEARCH</a>
+  </div>
+</div>
+</header>
+
+<body>
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">All <span class="w3-hide-small">About</span> Books</span>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT US</h3>
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+    
+      <img src="http://az616578.vo.msecnd.net/files/2016/05/22/635994817168223213-230785194_why-you-should-read-and-re-read-these-high-school-books-as-an-adult.jpeg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="400" height="300">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p><font size="4"><b><i class="fa fa-user w3-margin-right"></i>What we do?</b></font></p><br>
+      <p><font size="3.5">We recommend books for you through our database and search engine built by our own.  There are more than 17000 books from more than 30 categories for your choice.</font></p>
+    </div>
+ </div>   
+<div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+    
+      <img src="https://static.dezeen.com/uploads/2012/10/dezeen_Vertical-Loft-by-Shift_4.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="400">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p><font size="4"><b><i class="fa fa-user w3-margin-right"></i>How to get the book you want?</b></font></p><br>
+      <font size="3.5"><p>Click the search button on the upper right corner, then:</p>
+      <p>Option 1--Accurate Search</p>
+<p>You can type the book name or the unique ISBN (International Standard Book Number), then we will show book details for you!</p>
+
+<p>Option 2--Do not know what to read? We can help you!</p>
+<p>We provide several options for you. You can choose book categories, author name, language, price, best seller rank, rating of books (average score), publication year, paperback, customer reviews.</p></font>
+    </div>
+ </div>   
+
+ <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+    
+      <img src="http://az616578.vo.msecnd.net/files/2016/08/13/636066551858146440-1141841830_Sandmeyer-up-close.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="400" height="350">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p><font size="4"><b><i class="fa fa-user w3-margin-right"></i>See if you like it.</b></font></p><br>
+      <p><font size="3.5">Once you finish searching/selecting, we will provide a bunch of detailed information about this book such as book title, author, category, language, ISBN, best seller ranking, price, rating distribution, average score of the book, customer reviews, total number of reviews, paperback, introduction of the book and more.</font></p>
+    </div>
+  </div>
+  <div class="w3-row">  
+    <div class="w3-col m6 w3-center w3-padding-large">
+    
+      <img src="http://www.welikela.com/wp-content/uploads/2016/01/last-bookstore-book-display.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="400" height="300">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p><font size="4"><b><i class="fa fa-user w3-margin-right"></i>Bad luck? Try one from our recommendations!</b></font></p><br>
+      <p><font size="3.5">If you do not like the book you get, we also provide several books for you based on our algorithm. We take many factors into consideration into account and provide books that have similar properties to the book we just showed you. You can pick can one and start reading!</font></p>
+    </div>
+  </div>
+</div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-white w3-wide">STATISTICS</span>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+  <h3 class="w3-center">WHAT WE HAVE</h3>
+  <p class="w3-center"><font size="3.5"><em>Here are the facts about our database. You can choose any book you like.</em></font></p><br>
+</div>
+
+
+  <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+
+<div class="w3-container w3-padding w3-center" id="portfolio">
+<div class="w3-row"><br>
+
+<div class="onefifth" >
+
+        <p><font size="20">17406</font></p>
+        <p><font size="4">Books</font></p>
+</div>
+
+<div class="onefifth">
+       <p><font size="20">36</font></p>
+        <p><font size="4">Categories</font></p>
+</div>
+
+<div class="onefifth" >
+
+       <p><font size="20">13400+</font></p>
+        <p><font size="4">5-star books</font></p>
+</div>
+
+<div class="onefifth" >
+
+      <p><font size="20">1890000+</font></p>
+        <p><font size="4">Cusomer Reviews</font></p>
+</div>
+
+<div class="onefifth" >
+      <p><font size="20">17</font></p>
+        <p><font size="4">Languages</font></p>
+  
+</div>
+</div>
+</div>
+
+<div class="w3-content w3-container w3-padding-64" id="portfolio">
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+    
+      <img src="../static/charts/category.png"  class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="400" height="300">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p><font size="4"><b><i class="fa fa-user w3-margin-right"></i>Category Distribution</b></font></p><br>
+      <p><font size="3.5">There are 36 different categories, from business & money to literature & fiction, from romance to education & teaching, from crafts,hobbies & home to science fiction & fantasy. The top 3 categories are literature & fiction, children's and romance.</font></p>
+    </div>
+ </div>   
+<div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+    
+      <img src="../static/charts/rating.png" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="400">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p><font size="4"><b><i class="fa fa-user w3-margin-right"></i>Rating Distribution</b></font></p><br>
+      <font size="3.5"><p>The left chart shows the rating dsitribution for all books from 0.0 to 0.9, from 1.0 to 1.9, from 2.0 to 2.9, from 3.0 to 3.9, and from 4.0 to 5.0.</p></font>
+      
+    </div>
+ </div>   
+
+ <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+    
+      <img src="../static/charts/ranking.png" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="400" height="350">
+    </div>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+      <p><font size="4"><b><i class="fa fa-user w3-margin-right"></i>Best Seller Ranking Distribution</b></font></p><br>
+      <p><font size="3.5">The left chart shows the best seller ranking distribution for all books.(There are more than 30m books on Amazon.)</font></p>
+    </div>
+  </div>
+ 
+    <div class="w3-content w3-row w3-padding-64" id="portfolio" style="text-align:center">
+      <span style="font-size:1.5em;" style="text-align:center">
+      <a href="/userheatmap/" >User Heatmap</a>
+      </span>
+    </div>
+
+    <div class="w3-content w3-row" id="portfolio" style="text-align:center; margin-bottom: 49px" padding-bottom = "200px">
+      <span style="font-size:1.5em;" style="text-align:center">
+      <a href="/bokehplots/" >More Statistics</a>
+      </span>
+    </div>
+</div>
+
+
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+  </div>
+</div>
+<!-- Container (Contact Section) -->
+<!-- Team Container -->
+<div class="w3-container w3-padding-64 w3-center" id="contact">
+<h2>OUR TEAM</h2>
+<p>Meet the team</p>
+
+<div class="w3-row"><br>
+
+<div class="onefifth" >
+
+  <h3>Youtian Guo</h3>
+  <a target="_blank" href="https://www.linkedin.com/in/youtianguo/"> LinkedIn</a>
+</div>
+
+<div class="onefifth">
+
+  <h3>Zhiyi Guo</h3>
+  <a target="_blank" href="https://www.linkedin.com/in/candicezhiyiguo/"> LinkedIn</a>
+</div>
+
+<div class="onefifth" >
+
+  <h3>Sili Wang</h3>
+   <a target="_blank" href="https://www.linkedin.com/in/sili-wang/"> LinkedIn</a>
+</div>
+
+<div class="onefifth" >
+
+  <h3>Xintong Zhou</h3>
+  <a target="_blank" href="https://www.linkedin.com/in/xintong-zhou/"> LinkedIn</a>
+</div>
+
+<div class="onefifth" >
+
+  <h3>Jiachen Zou</h3>
+  <a target="_blank" href="https://www.linkedin.com/in/jiachenzou/"> LinkedIn</a>
+</div>
+
+
+</div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</footer>
+ 
+<!-- Add Google Maps -->
+<script>
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card-2" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
