@@ -1,5 +1,4 @@
-Website for books recommendation
-project for course Data Analytics
+Project for course Data Analytics
 
 A website to recommend books to users
 Connected to database using MongoDB
